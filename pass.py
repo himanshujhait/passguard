@@ -7,7 +7,7 @@ l=len(x)
 
 if (l<10):
     rate +=0
-    op="suggestion...len contain minimum 15 characters "
+    op="suggestion...len contain minimum 15 characters\n"
 
 elif (l>=10 and l<=12):
     rate+=1
@@ -19,19 +19,33 @@ else :
     rate +=3
     op=op+"len    passed✅\n"
 
-flag =False
+flag=False
+flag1=False
+flag2=False
 for ch in x:
     if (ch.isupper()==True):
-        flag=True
+            flag=True
+    if (ch.islower()==True):
+            flag1=True
+    if (ch.isnumeric()==True):
+        flag2=True
+
 
 if (flag==True):
-    rate+=1
     op=op+"uppercase    passed✅\n"
+    rate+=1
 else :
-    op=op+"Add atleast 1 uppercase\n"
+    op=op+"Add atleast 1 uppercase \n"
+if (flag1==True):
+    op=op+"lowercase    passed✅\n"
+    rate+=1
+else :
+     op=op+"Add atleast 1 lowercase \n"
 
-
-
-
-
+if (flag2==True):
+    op=op+"Numeric    passed✅\n"
+    rate+=1
+else :
+     op=op+"Add atleast 1 number \n"
+     
 
