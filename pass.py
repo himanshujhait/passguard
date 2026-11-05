@@ -47,5 +47,25 @@ if (flag2==True):
     rate+=1
 else :
      op=op+"Add atleast 1 number \n"
+
+flag3=False
+with open("commonpass.txt","r") as f:
+    content=f.readlines()
+    for i in content:
+        if i.strip()==x:
+            flag3=True
+
+if flag3==False:
+    rate+=2
+    op+="No_common_pass    passed✅"
+
+else:
+     op+="create a unique password"
+
+print(op)
+print(rate)
      
+    
+              
+
 
