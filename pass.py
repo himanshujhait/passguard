@@ -62,8 +62,7 @@ if flag3==False:
 else:
      op+="create a unique password"
 
-print(op)
-print(rate)
+
      
     
               
