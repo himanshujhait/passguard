@@ -1,6 +1,8 @@
+import string
 print(" =========welcome to password checker========= ")
 
 x=(input("Enter your pass: "))
+pun=string.punctuation
 rate=0
 op=""
 l=len(x)
@@ -22,6 +24,7 @@ else :
 flag=False
 flag1=False
 flag2=False
+flag4=False
 for ch in x:
     if (ch.isupper()==True):
             flag=True
@@ -29,7 +32,8 @@ for ch in x:
             flag1=True
     if (ch.isnumeric()==True):
         flag2=True
-
+    if (ch in pun):
+        flag4=True
 
 if (flag==True):
     op=op+"uppercase    passed✅\n"
@@ -46,7 +50,12 @@ if (flag2==True):
     op=op+"Numeric    passed✅\n"
     rate+=1
 else :
-     op=op+"Add atleast 1 number \n"
+    op=op+"Add atleast 1 number \n"
+if (flag4==True):
+    op=op+"special_char    passed✅\n"
+    rate+=1
+else :
+    op=op+"Add atleast 1 special character \n"
 
 flag3=False
 with open("commonpass.txt","r") as f:
@@ -62,9 +71,6 @@ if flag3==False:
 else:
      op+="create a unique password"
 
-
-     
-    
-              
+             
 
 
