@@ -1,5 +1,5 @@
 import string
-print(" =========welcome to password checker========= ")
+print(" ===========================WELCOME TO PASSWORD CHECKER==================================\n\n ")
 
 x=(input("Enter your pass: "))
 pun=string.punctuation
@@ -16,7 +16,7 @@ elif (l>=10 and l<=12):
     op="suggestion...len contain minimum 15 characters\n"
 elif (l>=13 and l<=14):
     rate +=2
-    op="suggestion...len contain minimum 15 characters\n"
+    op="length is ok, But 15+ is best\n"
 else :
     rate +=3
     op=op+"len    passed✅\n"
@@ -81,7 +81,7 @@ for i in range (l-2):
     if(x[i]==x[i+1]==x[i+2]):
         flag5=True
         
-if ((l==len(set(x)) or l==len(set(x))+1) and flag5==False):
+if ((l==len(set(x)) or l==len(set(x))+1 or l==len(set(x))+2 or l==len(set(x))+3) and flag5==False):
     op+="No_repeatation    passed✅ \n"
     rate+=1
 
@@ -89,6 +89,22 @@ else:
     op=op+"Avoid repeatation in password \n"
     rate-=1
 
+op+="\n..........................................................................\n \n"
+
+print(op)
+result=""  
+if (rate<=3):
+    result+=(f"VERY WEAK PASSWORD ☹️\nRATE={rate}/10")
+
+elif (rate>3 and rate<7):
+    result+=(f"WEAK PASSWORD 🥲\nRATE={rate}/10")
+elif (rate>=7 and rate<=9):
+    result+=(f"STRONG PASSOWRD 🙂\nRATE={rate}/10")
+else:
+    result+=(f"THAT'S A PERFECT PASSOWRD 😇\nRATE={rate}/10")
+
+    
+print(result)
 
 
-
+print("================================THANKS FOR USING================================")
